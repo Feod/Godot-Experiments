@@ -40,3 +40,35 @@ position = Vector2(611, 481)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("4_abcde")
+
+[node name="BorderTop" type="StaticBody2D" parent="."]
+position = Vector2(512, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderTop"]
+shape = RectangleShape2D {
+    size = Vector2(1024, 10)
+}
+
+[node name="BorderBottom" type="StaticBody2D" parent="."]
+position = Vector2(512, 1024)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderBottom"]
+shape = RectangleShape2D {
+    size = Vector2(1024, 10)
+}
+
+[node name="BorderLeft" type="StaticBody2D" parent="."]
+position = Vector2(0, 512)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderLeft"]
+shape = RectangleShape2D {
+    size = Vector2(10, 1024)
+}
+
+[node name="BorderRight" type="StaticBody2D" parent="."]
+position = Vector2(1024, 512)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderRight"]
+shape = RectangleShape2D {
+    size = Vector2(10, 1024)
+}
