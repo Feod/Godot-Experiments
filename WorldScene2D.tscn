@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmoycorbphu1v"]
+[gd_scene load_steps=7 format=3 uid="uid://bmoycorbphu1v"]
 
 [ext_resource type="Script" path="res://PhysicsMove.gd" id="1_5ld7j"]
 [ext_resource type="Texture2D" uid="uid://cu3qjj1fheano" path="res://icon.svg" id="2_d01lj"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x0ucw"]
 size = Vector2(150, 150)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lb0s"]
+size = Vector2(4000, 100)
 
 [node name="WorldScene2D" type="Node2D"]
 
@@ -39,36 +42,39 @@ position = Vector2(313, 462)
 position = Vector2(611, 481)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(512, 0)
 script = ExtResource("4_abcde")
 
-[node name="BorderTop" type="StaticBody2D" parent="."]
-position = Vector2(512, 0)
+[node name="Border" type="Node2D" parent="."]
+position = Vector2(0, -472)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderTop"]
-shape = RectangleShape2D {
-    size = Vector2(1024, 10)
-}
+[node name="StaticBody2D" type="StaticBody2D" parent="Border"]
 
-[node name="BorderBottom" type="StaticBody2D" parent="."]
-position = Vector2(512, 1024)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/StaticBody2D"]
+shape = SubResource("RectangleShape2D_1lb0s")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderBottom"]
-shape = RectangleShape2D {
-    size = Vector2(1024, 10)
-}
+[node name="Border2" type="Node2D" parent="."]
+position = Vector2(0, 917)
 
-[node name="BorderLeft" type="StaticBody2D" parent="."]
-position = Vector2(0, 512)
+[node name="StaticBody2D" type="StaticBody2D" parent="Border2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderLeft"]
-shape = RectangleShape2D {
-    size = Vector2(10, 1024)
-}
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border2/StaticBody2D"]
+shape = SubResource("RectangleShape2D_1lb0s")
 
-[node name="BorderRight" type="StaticBody2D" parent="."]
-position = Vector2(1024, 512)
+[node name="Border3" type="Node2D" parent="."]
+position = Vector2(1888, 535)
+rotation = 1.57079
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderRight"]
-shape = RectangleShape2D {
-    size = Vector2(10, 1024)
-}
+[node name="StaticBody2D" type="StaticBody2D" parent="Border3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border3/StaticBody2D"]
+shape = SubResource("RectangleShape2D_1lb0s")
+
+[node name="Border4" type="Node2D" parent="."]
+position = Vector2(-256, 535)
+rotation = 1.57079
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Border4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border4/StaticBody2D"]
+shape = SubResource("RectangleShape2D_1lb0s")
