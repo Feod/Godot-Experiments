@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends PhysicsBody2D
 
 class_name Player
 
