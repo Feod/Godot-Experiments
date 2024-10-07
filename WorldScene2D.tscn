@@ -29,15 +29,14 @@ position = Vector2(490, 250)
 script = ExtResource("1_5ld7j")
 physBodyTarget = NodePath(".")
 
-[node name="NonPlayer4" parent="." instance=ExtResource("3_eb01y")]
+[node name="NonPlayer4" parent="." groups=["RigidBodies"] instance=ExtResource("3_eb01y")]
 position = Vector2(780, 207)
 
-[node name="NonPlayer2" parent="." instance=ExtResource("3_eb01y")]
+[node name="NonPlayer2" parent="." groups=["RigidBodies"] instance=ExtResource("3_eb01y")]
 position = Vector2(313, 462)
 
-[node name="NonPlayer3" parent="." instance=ExtResource("3_eb01y")]
+[node name="NonPlayer3" parent="." groups=["RigidBodies"] instance=ExtResource("3_eb01y")]
 position = Vector2(611, 481)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, 0)
 script = ExtResource("4_abcde")
