@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmoycorbphu1v"]
+
+[ext_resource type="Script" path="res://PhysicsMove.gd" id="1_5ld7j"]
+[ext_resource type="Texture2D" uid="uid://cu3qjj1fheano" path="res://icon.svg" id="2_d01lj"]
+[ext_resource type="PackedScene" uid="uid://dowcdd4elcjfe" path="res://non_player.tscn" id="3_eb01y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0ucw"]
+size = Vector2(150, 150)
+
+[node name="WorldScene2D" type="Node2D"]
+
+[node name="Player" type="RigidBody2D" parent="." node_paths=PackedStringArray("physBodyTarget")]
+position = Vector2(224, 225)
+gravity_scale = 0.0
+linear_damp = 5.0
+angular_damp = 5.0
+script = ExtResource("1_5ld7j")
+physBodyTarget = NodePath(".")
+
+[node name="Icon" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_d01lj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_x0ucw")
+
+[node name="PlayerFromNonPlayer" parent="." node_paths=PackedStringArray("physBodyTarget") instance=ExtResource("3_eb01y")]
+position = Vector2(490, 250)
+script = ExtResource("1_5ld7j")
+physBodyTarget = NodePath(".")
+
+[node name="NonPlayer4" parent="." instance=ExtResource("3_eb01y")]
+position = Vector2(780, 207)
+
+[node name="NonPlayer2" parent="." instance=ExtResource("3_eb01y")]
+position = Vector2(313, 462)
+
+[node name="NonPlayer3" parent="." instance=ExtResource("3_eb01y")]
+position = Vector2(611, 481)
