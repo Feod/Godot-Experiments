@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmoycorbphu1v"]
+[gd_scene load_steps=6 format=3 uid="uid://bmoycorbphu1v"]
 
 [ext_resource type="Script" path="res://PhysicsMove.gd" id="1_5ld7j"]
 [ext_resource type="Texture2D" uid="uid://cu3qjj1fheano" path="res://icon.svg" id="2_d01lj"]
 [ext_resource type="PackedScene" uid="uid://dowcdd4elcjfe" path="res://non_player.tscn" id="3_eb01y"]
+[ext_resource type="Script" path="res://CameraFollow.gd" id="4_abcde"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x0ucw"]
 size = Vector2(150, 150)
@@ -36,3 +37,7 @@ position = Vector2(313, 462)
 
 [node name="NonPlayer3" parent="." instance=ExtResource("3_eb01y")]
 position = Vector2(611, 481)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 0)
+script = ExtResource("4_abcde")
